@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kulldeep Sandhu | Official Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #0f0f11;
+        --text-color: #e0e0e0;
+        --accent-color: #d4af37; /* Elegant gold accent */
+        --card-bg: #1a1a1d;
+        --border-color: #333333;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Montserrat", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      /* Navigation */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 5%;
+        background-color: rgba(15, 15, 17, 0.95);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      nav h1 {
+        font-size: 1.5rem;
+        color: var(--accent-color);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+
+      nav a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Hero Section */
+      #home {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 5% 50px;
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .hero-text {
+        flex: 1;
+      }
+
+      .hero-text h2 {
+        font-size: 3.5rem;
+        line-height: 1.1;
+        margin-bottom: 10px;
+        color: #ffffff;
+      }
+
+      .hero-text h3 {
+        font-size: 1.5rem;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+        font-weight: 400;
+      }
+
+      .hero-text p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        color: #aaaaaa;
+      }
+
+      .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .hero-image img {
+        width: 100%;
+        max-width: 450px;
+        border-radius: 10px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        border: 2px solid var(--border-color);
+      }
+
+      /* Section Styling */
+      section {
+        padding: 80px 5%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .section-title span {
+        color: var(--accent-color);
+      }
+
+      /* About Section */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        background-color: var(--card-bg);
+        padding: 40px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+      }
+
+      .about-info h4 {
+        color: var(--accent-color);
+        margin-bottom: 10px;
+      }
+
+      .about-info p {
+        margin-bottom: 15px;
+      }
+
+      /* Discography Section */
+      .controls {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        border: 1px solid var(--accent-color);
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background-color: var(--accent-color);
+        color: #000;
+      }
+
+      .table-container {
+        overflow-x: auto;
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        max-height: 600px;
+        overflow-y: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+      }
+
+      th,
+      td {
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      th {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: var(--accent-color);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 30px;
+        background-color: var(--card-bg);
+        border-top: 1px solid var(--border-color);
+        margin-top: 50px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        #home {
+          flex-direction: column-reverse;
+          text-align: center;
+          padding-top: 120px;
+        }
+        nav ul {
+          display: none; /* Can be replaced with a hamburger menu */
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1>KS</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#discography">Discography</a></li>
+      </ul>
+    </nav>
+
+    <header id="home">
+      <div class="hero-text">
+        <h2>Kulldeep Sandhu</h2>
+        <h3>Composer • Singer • Music Producer</h3>
+        <p>
+          Bringing the rich traditions of Punjabi folk, Indian classical, and
+          devotional music to life through soulful compositions and powerful
+          vocals.
+        </p>
+        <a
+          href="#discography"
+          class="filter-btn"
+          style="display: inline-block; text-decoration: none"
+          >View Discography</a
+        >
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Kuldeep_sandhu.jpg"
+          alt="Kulldeep Sandhu"
+        />
+      </div>
+    </header>
+
+    <section id="about">
+      <h2 class="section-title">About <span>Kulldeep</span></h2>
+      <div class="about-grid">
+        <div class="about-info">
+          <h4>Background</h4>
+          <p>
+            Born on April 9, 1978, in Punjab, India, Kulldeep Sandhu has
+            established himself as a versatile and prolific artist in the Indian
+            music industry.
+          </p>
+          <p>
+            With decades of experience, he has shaped the soundscapes of
+            countless videos, shorts, and television series, proving his mastery
+            over rhythm and melody.
+          </p>
+        </div>
+        <div class="about-info">
+          <h4>Musical Expertise</h4>
+          <p>
+            <strong>Genres:</strong> Punjabi folk, Indian classical, Devotional
+          </p>
+          <p>
+            <strong>Occupations:</strong> Composer, Singer, Music Producer,
+            Writer, Actor
+          </p>
+          <p>
+            His extensive catalog features hundreds of credits ranging from
+            devotional tracks like "Shri Hanuman Chalisa" to modern music videos
+            and film compositions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="discography">
+      <h2 class="section-title">Career <span>Discography</span></h2>
+
+      <div class="controls">
+        <button class="filter-btn active" onclick="filterTable('All')">
+          All Roles
+        </button>
+        <button class="filter-btn" onclick="filterTable('Composer')">
+          Composer
+        </button>
+        <button class="filter-btn" onclick="filterTable('Producer')">
+          Producer
+        </button>
+        <button class="filter-btn" onclick="filterTable('Actor')">Actor</button>
+        <button class="filter-btn" onclick="filterTable('Writer')">
+          Writer
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table id="discoTable">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Title</th>
+              <th>Year</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Composer</td>
+              <td>Ullu Da Pattha</td>
+              <td>2022</td>
+              <td>Short</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Duniya Se Haar Kar</td>
+              <td>2021</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Shri Hanuman Chalisa</td>
+              <td>2021</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Producer</td>
+              <td>Shri Hanuman Chalisa</td>
+              <td>2021</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Kaise Manau Holi</td>
+              <td>2021</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Actor</td>
+              <td>Kaise Manau Holi</td>
+              <td>2021</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Batwara</td>
+              <td>2021</td>
+              <td>TV Series</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Sunn Diiliye</td>
+              <td>2020</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Actor</td>
+              <td>Sunn Diiliye</td>
+              <td>2020</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Jugni Bigad Gayi</td>
+              <td>2020</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Actor</td>
+              <td>Jugni Bigad Gayi</td>
+              <td>2020</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Guru Nanak</td>
+              <td>2019</td>
+              <td>Short</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Gurdwara Panja Sahib</td>
+              <td>2019</td>
+              <td>Short</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Hanuman Chalisa Anhad Naad</td>
+              <td>2019</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Writer</td>
+              <td>Mehsoos</td>
+              <td>2018</td>
+              <td>Short</td>
+            </tr>
+            <tr>
+              <td>Producer</td>
+              <td>Chitta</td>
+              <td>2018</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Producer</td>
+              <td>Bewafaai</td>
+              <td>2018</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Dabdaba - Commonwealth Games Song</td>
+              <td>2018</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>IPL Song: Dhoom Machi</td>
+              <td>2018</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Writer</td>
+              <td>Dress Up</td>
+              <td>2017</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Producer</td>
+              <td>Durga Chalisa</td>
+              <td>2017</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Actor</td>
+              <td>Ghadi Pal Yara</td>
+              <td>2016</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Writer</td>
+              <td>Narrow Jeans</td>
+              <td>2015</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Dil Tod Da</td>
+              <td>2013</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Actor</td>
+              <td>Dhol Vajda</td>
+              <td>2011</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Ishq Da Bukhar</td>
+              <td>2010</td>
+              <td>Video</td>
+            </tr>
+            <tr>
+              <td>Composer</td>
+              <td>Maula Maula</td>
+              <td>2010</td>
+              <td>Video</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Kulldeep Sandhu. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function filterTable(role) {
+        // Update active button styling
+        const buttons = document.querySelectorAll(".filter-btn");
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+
+        // Filter the table rows
+        const table = document.getElementById("discoTable");
+        const tr = table.getElementsByTagName("tr");
+
+        for (let i = 1; i < tr.length; i++) {
+          let td = tr[i].getElementsByTagName("td")[0]; // Role is in the first column
+          if (td) {
+            let txtValue = td.textContent || td.innerText;
+            if (role === "All" || txtValue === role) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
